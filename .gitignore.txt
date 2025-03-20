@@ -38,6 +38,7 @@ lerna-debug.log
 
 # Visual Studio
 .vs/
+.vs\
 *.user
 *.suo
 *.sln*

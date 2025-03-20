@@ -1,3 +1,6 @@
+using Domain.Tickets.Queries.GetTicketsListQuery;
+using Infrastructure.Models;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngularApp.Server.Controllers
@@ -9,16 +12,26 @@ namespace AngularApp.Server.Controllers
         private static readonly string[] Summaries = new[] { "Freezing" };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ApplicationDbContext context;
+        private readonly ISender sender;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(
+            ApplicationDbContext context,
+            ISender sender,
+            ILogger<WeatherForecastController> logger
+        )
         {
+            this.context = context;
             _logger = logger;
+            this.sender = sender;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<ActionResult> Get()
         {
-            return Enumerable
+            var result1 = await sender.Send(new GetTicketsListQuery());
+
+            var result = Enumerable
                 .Range(1, 15)
                 .Select(index => new WeatherForecast
                 {
@@ -27,6 +40,7 @@ namespace AngularApp.Server.Controllers
                     Summary = Summaries[Random.Shared.Next(Summaries.Length)]
                 })
                 .ToArray();
+            return Ok(result1);
         }
     }
 }

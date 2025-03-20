@@ -1,0 +1,53 @@
+<div class="edit-ticket-container">
+  <!-- <h2>Редагування тікета</h2> -->
+
+  <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input id="title" type="text" formControlName="title" required />
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select id="status" formControlName="status">
+        <option value="Open">Open</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Closed">Closed</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select id="type" formControlName="type">
+        <option value="Bug">Bug</option>
+        <option value="Feature">Feature</option>
+        <option value="Task">Task</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="module">Module:</label>
+      <input id="module" type="text" formControlName="module" />
+    </div>
+
+    <div class="form-group">
+      <label for="urgentLvl">Urgent Lvl:</label>
+      <select id="urgentLvl" formControlName="urgentLvl">
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" [disabled]="ticketForm.invalid">Save</button>
+  </form>
+</div>

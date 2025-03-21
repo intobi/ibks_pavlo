@@ -6,7 +6,6 @@ namespace Infrastructure.Models;
 
 public partial class LogType
 {
-    [Key]
     public int Id { get; set; }
 
     public string? Title { get; set; }

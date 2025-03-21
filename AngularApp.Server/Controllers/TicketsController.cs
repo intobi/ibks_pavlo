@@ -1,4 +1,10 @@
-﻿using Domain.Tickets.Queries.GetTicketsListQuery;
+﻿using Domain.Tickets;
+using Domain.Tickets.Commands.CreateTicket;
+using Domain.Tickets.Commands.CreateTicketReply;
+using Domain.Tickets.Commands.UpdateTicket;
+using Domain.Tickets.Queries.GetAllTicketReplies;
+using Domain.Tickets.Queries.GetTicketById;
+using Domain.Tickets.Queries.GetTicketsListQuery;
 using Infrastructure.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -9,28 +15,53 @@ namespace AngularApp.Server.Controllers
     [Route("[controller]")]
     public class TicketsController : ControllerBase
     {
-        private static readonly string[] Summaries = new[] { "Freezing" };
-
-        private readonly ILogger<TicketsController> _logger;
-        private readonly ApplicationDbContext context;
         private readonly ISender sender;
 
-        public TicketsController(
-            ApplicationDbContext context,
-            ISender sender,
-            ILogger<TicketsController> logger
-        )
+        public TicketsController(ISender sender)
         {
-            this.context = context;
-            _logger = logger;
             this.sender = sender;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public async Task<ActionResult> Get()
         {
-            var result1 = await sender.Send(new GetTicketsListQuery());
-            return Ok(result1);
+            var result = await sender.Send(new GetTicketsListQuery());
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> Get(long id)
+        {
+            var result = await sender.Send(new GetTicketByIdQuery(id));
+            return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdateTicket(long id, [FromBody] EditCreateTicketDto ticket)
+        {
+            await sender.Send(new UpdateTicketCommand(ticket));
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> CreateTicket([FromBody] EditCreateTicketDto ticket)
+        {
+            await sender.Send(new CreateTicketCommand(ticket));
+            return Ok();
+        }
+
+        [HttpPost("reply/{id}")]
+        public async Task<ActionResult> CreateTicketReply(long id, [FromBody] TicketReplyDto reply)
+        {
+            await sender.Send(new CreateTicketReplyCommand(reply));
+            return Ok();
+        }
+
+        [HttpGet("replies/{id}")]
+        public async Task<ActionResult> GetAllTicketReplies(long id)
+        {
+            var result = await sender.Send(new GetAllTicketRepliesQuery(id));
+            return Ok(result);
         }
     }
 }

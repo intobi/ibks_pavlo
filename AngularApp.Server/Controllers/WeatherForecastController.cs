@@ -29,8 +29,6 @@ namespace AngularApp.Server.Controllers
         [HttpGet(Name = "GetWeatherForecast2")]
         public async Task<ActionResult> Get()
         {
-            var result1 = await sender.Send(new GetTicketsListQuery());
-
             var result = Enumerable
                 .Range(1, 15)
                 .Select(index => new WeatherForecast
@@ -40,7 +38,7 @@ namespace AngularApp.Server.Controllers
                     Summary = Summaries[Random.Shared.Next(Summaries.Length)]
                 })
                 .ToArray();
-            return Ok(result1);
+            return Ok(result);
         }
     }
 }

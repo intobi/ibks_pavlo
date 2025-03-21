@@ -27,6 +27,7 @@ namespace Domain.Tickets.Queries.GetTicketsListQuery
             var result = await this
                 .context.Tickets.Include(x => x.Status)
                 .Include(x => x.TicketType)
+                .OrderBy(x => x.Date)
                 .Select(src => new TicketForListPageDto()
                 {
                     Id = src.Id,

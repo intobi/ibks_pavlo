@@ -1,0 +1,16 @@
+<table class="ticket-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Text</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reply of ticketReplies">
+      <td>{{ reply.id }}</td>
+      <td>{{ reply.text }}</td>
+      <td>{{ reply.createdAt | date : "dd-MM-YYYY hh:mm" }}</td>
+    </tr>
+  </tbody>
+</table>

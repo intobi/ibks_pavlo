@@ -10,18 +10,18 @@
     <div class="form-group">
       <label for="status">Status:</label>
       <select id="status" formControlName="status">
-        <option value="Open">Open</option>
-        <option value="In Progress">In Progress</option>
-        <option value="Closed">Closed</option>
+        <option *ngFor="let status of statuses" [value]="status.value">
+          {{ status.label }}
+        </option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="type">Type:</label>
       <select id="type" formControlName="type">
-        <option value="Bug">Bug</option>
-        <option value="Feature">Feature</option>
-        <option value="Task">Task</option>
+        <option *ngFor="let type of types" [value]="type.value">
+          {{ type.label }}
+        </option>
       </select>
     </div>
 
@@ -33,11 +33,24 @@
     <div class="form-group">
       <label for="urgentLvl">Urgent Lvl:</label>
       <select id="urgentLvl" formControlName="urgentLvl">
-        <option value="Low">Low</option>
-        <option value="Medium">Medium</option>
-        <option value="High">High</option>
+        <option *ngFor="let priority of priorities" [value]="priority.value">
+          {{ priority.label }}
+        </option>
       </select>
     </div>
+
+    <div class="form-group">
+      <label for="installedEnvironment">Installed environment:</label>
+      <select id="installedEnvironment" formControlName="installedEnvironment">
+        <option
+          *ngFor="let environment of environments"
+          [value]="environment.value"
+        >
+          {{ environment.label }}
+        </option>
+      </select>
+    </div>
+    <!-- environments -->
 
     <div class="form-group">
       <label for="description">Description:</label>

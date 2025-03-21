@@ -8,6 +8,7 @@
       <th>Module</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,8 +18,19 @@
       <td>{{ ticket.status }}</td>
       <td>{{ ticket.type }}</td>
       <td>{{ ticket.module }}</td>
-      <td><a [routerLink]="['/tickets', ticket.id]" class="edit-btn">Edit</a></td>
-      <td><a [routerLink]="['/tickets', ticket.id]" class="reply-btn">Add reply</a></td>
+      <td>
+        <a [routerLink]="['/tickets', ticket.id]" class="edit-btn">Edit</a>
+      </td>
+      <td>
+        <a [routerLink]="['/tickets/reply', ticket.id]" class="reply-btn"
+          >Add reply</a
+        >
+      </td>
+      <td>
+        <a [routerLink]="['/tickets/replies', ticket.id]" class="edit-btn"
+          >View replies</a
+        >
+      </td>
     </tr>
   </tbody>
 </table>

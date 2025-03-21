@@ -4,7 +4,6 @@ namespace Infrastructure.Models;
 
 public partial class InstalledEnvironment
 {
-    [Key]
     public int Id { get; set; }
 
     public string? Title { get; set; }

@@ -6,7 +6,6 @@ namespace Infrastructure.Models;
 
 public partial class TicketReply
 {
-    [Key]
     public int ReplyId { get; set; }
 
     public long Tid { get; set; }

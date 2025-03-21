@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { TicketForListPageDto } from '../../API/Models/ticketForListPageDto';
+import { TicketsService } from '../../API/Services/tickets.service';
 
 @Component({
   selector: 'app-tickets-list',
@@ -11,26 +12,17 @@ import { TicketForListPageDto } from '../../API/Models/ticketForListPageDto';
 export class TicketsListComponent {
   public tickets: TicketForListPageDto[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    public ticketsService: TicketsService
+  ) {}
 
   ngOnInit() {
-    //this.getForecasts();
-    this.getForecasts2();
+    this.getAllTickets();
   }
 
-  getForecasts3() {
-    this.http.get<any[]>('http://localhost:5126/api/tickets').subscribe(
-      (result) => {
-        this.tickets = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
-
-  getForecasts2() {
-    this.http.get<TicketForListPageDto[]>('tickets').subscribe(
+  getAllTickets() {
+    this.ticketsService.getAllTickets().subscribe(
       (result) => {
         this.tickets = result;
       },

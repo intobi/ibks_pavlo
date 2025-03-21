@@ -23,10 +23,7 @@ export class TicketFormComponent {
 
   ticketForm: any;
   ticketId: string | null = null;
-  constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private fb: FormBuilder, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.ticketId = this.route.snapshot.paramMap.get('id');

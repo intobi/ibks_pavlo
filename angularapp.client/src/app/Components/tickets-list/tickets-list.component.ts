@@ -14,11 +14,23 @@ export class TicketsListComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getForecasts();
+    //this.getForecasts();
+    this.getForecasts2();
   }
 
-  getForecasts() {
-    this.http.get<TicketForListPageDto[]>('/weatherforecast').subscribe(
+  getForecasts3() {
+    this.http.get<any[]>('http://localhost:5126/api/tickets').subscribe(
+      (result) => {
+        this.tickets = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  getForecasts2() {
+    this.http.get<TicketForListPageDto[]>('tickets').subscribe(
       (result) => {
         this.tickets = result;
       },

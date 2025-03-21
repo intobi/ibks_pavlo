@@ -26,7 +26,7 @@ namespace AngularApp.Server.Controllers
             this.sender = sender;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet(Name = "GetWeatherForecast2")]
         public async Task<ActionResult> Get()
         {
             var result1 = await sender.Send(new GetTicketsListQuery());

@@ -1,0 +1,48 @@
+.ticket-reply-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-reply-form .form-group {
+  margin-bottom: 15px;
+}
+
+.ticket-reply-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.ticket-reply-form .reply-textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.ticket-reply-form .submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-reply-form .submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.ticket-reply-form .submit-btn:hover {
+  background-color: #0056b3;
+}

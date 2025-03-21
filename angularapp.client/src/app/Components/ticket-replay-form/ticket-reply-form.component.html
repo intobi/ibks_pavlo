@@ -1,0 +1,22 @@
+<form [formGroup]="ticketReplyForm" (ngSubmit)="onSubmit()" class="ticket-reply-form">
+    <div class="form-group">
+      <label for="replyText">Reply text:</label>
+      <textarea
+        id="replyText"
+        formControlName="replyText"
+        class="reply-textarea"
+        required
+        rows="4"
+        placeholder="Enter your reply here"
+      ></textarea>
+    </div>
+  
+    <button
+      type="submit"
+      class="submit-btn"
+      [disabled]="ticketReplyForm.invalid"
+    >
+      Save
+    </button>
+  </form>
+  

@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "g7W1jKDye4wmhDY76zZ8KPxKp+2SQplwwlnsTfig5Gc=",
+  "Hash": "ja1s5XshdNBEDgRyKwM/fzHNOA95c2LpQEb0I8H7AAA=",
   "Source": "AngularApp.Server",
   "BasePath": "_content/AngularApp.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Pavlo\\Projects\\MyOwn\\intobi\\AngularApp\\angularapp.client\\angularapp.client.esproj",
+      "Identity": "C:\\Pavlo\\Projects\\MyOwn\\intobiGit\\ibks_pavlo\\angularapp.client\\angularapp.client.esproj",
       "Version": 2,
       "Source": "angularapp.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",

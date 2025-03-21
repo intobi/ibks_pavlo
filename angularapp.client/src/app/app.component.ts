@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TicketForListPageDto } from './API/Models/ticketForListPageDto';
 
 interface WeatherForecast {
   date: string;
@@ -12,21 +13,20 @@ interface WeatherForecast {
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
+  public tickets: TicketForListPageDto[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getForecasts();
   }
 
   getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
+    this.http.get<TicketForListPageDto[]>('/weatherforecast').subscribe(
       (result) => {
-        this.forecasts = result;
+        this.tickets = result;
       },
       (error) => {
         console.error(error);
@@ -34,5 +34,5 @@ export class AppComponent implements OnInit {
     );
   }
 
-  title = 'angularapp.client';
+  title = 'TicketsManagement';
 }

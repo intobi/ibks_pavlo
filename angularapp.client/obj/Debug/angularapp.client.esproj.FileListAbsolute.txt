@@ -1,1 +1,2 @@
 C:\Pavlo\Projects\MyOwn\intobi\AngularApp\angularapp.client\obj\Debug\angularapp.client.esproj.CoreCompileInputs.cache
+C:\Pavlo\Projects\MyOwn\intobiGit\ibks_pavlo\angularapp.client\obj\Debug\angularapp.client.esproj.CoreCompileInputs.cache

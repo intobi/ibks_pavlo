@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularApp.Server", "AngularApp.Server\AngularApp.Server.csproj", "{55524CB4-4830-403C-9375-9804C1455F3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularApp.Server", "AngularApp.Server\AngularApp.Server.csproj", "{55524CB4-4830-403C-9375-9804C1455F3A}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "angularapp.client", "angularapp.client\angularapp.client.esproj", "{06AD992B-360B-4C7A-8424-628D916DE4E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{D400792E-725A-4D5E-A23E-93C4C251AB2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{611B5264-E227-4F68-AA69-2A4458B8F6DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,14 @@ Global
 		{06AD992B-360B-4C7A-8424-628D916DE4E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06AD992B-360B-4C7A-8424-628D916DE4E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06AD992B-360B-4C7A-8424-628D916DE4E3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D400792E-725A-4D5E-A23E-93C4C251AB2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D400792E-725A-4D5E-A23E-93C4C251AB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D400792E-725A-4D5E-A23E-93C4C251AB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D400792E-725A-4D5E-A23E-93C4C251AB2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611B5264-E227-4F68-AA69-2A4458B8F6DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611B5264-E227-4F68-AA69-2A4458B8F6DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611B5264-E227-4F68-AA69-2A4458B8F6DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611B5264-E227-4F68-AA69-2A4458B8F6DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
